@@ -1,0 +1,19 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+.terraform.lock.hcl
+
+# Llaves y credenciales
+*.pem
+*.key
+.env
+credentials
+config
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
