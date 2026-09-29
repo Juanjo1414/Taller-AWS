@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EC2AndNetworking",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RDSManagement",
+      "Effect": "Allow",
+      "Action": [
+        "rds:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RDSSecretsManagerIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:TagResource",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:DescribeSecret",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
