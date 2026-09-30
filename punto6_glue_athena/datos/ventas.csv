@@ -1,0 +1,26 @@
+id,producto,categoria,cantidad,precio,ciudad
+1,Laptop,Tecnologia,1,3200,Medellin
+2,Mouse,Tecnologia,3,80,Bogota
+3,Teclado,Tecnologia,2,150,Cali
+4,Silla,Oficina,1,600,Medellin
+5,Escritorio,Oficina,1,900,Bogota
+6,Monitor,Tecnologia,2,850,Cali
+7,Impresora,Tecnologia,1,700,Medellin
+8,Cuaderno,Papeleria,5,20,Bogota
+9,Marcadores,Papeleria,4,15,Cali
+10,Archivador,Oficina,2,120,Medellin
+11,Tablet,Tecnologia,1,1400,Bogota
+12,Lampara,Oficina,3,90,Cali
+13,Audifonos,Tecnologia,2,250,Medellin
+14,Carpeta,Papeleria,6,12,Bogota
+15,Calculadora,Papeleria,2,75,Cali
+16,Webcam,Tecnologia,1,300,Medellin
+17,Microfono,Tecnologia,1,450,Bogota
+18,Agenda,Papeleria,3,30,Cali
+19,Soporte Monitor,Oficina,2,180,Medellin
+20,Disco SSD,Tecnologia,2,500,Bogota
+21,Memoria USB,Tecnologia,4,45,Medellin
+22,Resma papel,Papeleria,3,25,Bogota
+23,Silla ergonomica,Oficina,1,950,Cali
+24,Router,Tecnologia,2,380,Medellin
+25,Notas adhesivas,Papeleria,6,10,Bogota
