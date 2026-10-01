@@ -1,12 +1,17 @@
 # Comandos AWS CLI - Punto 2
 
+Todos los comandos usan el perfil `user_cli` y la región `us-east-2`. Las variables (`VPC_ID`, `SUBNET1_ID`, etc.) se reutilizan entre pasos, por lo que deben ejecutarse en la misma sesión de terminal.
+
 ## Perfil utilizado
 
 ```bash
 aws sts get-caller-identity --profile user_cli
+```
+
 
 ## Crear VPC
 
+```bash
 VPC_ID=$(aws ec2 create-vpc \
   --cidr-block 10.2.0.0/16 \
   --region us-east-2 \
@@ -14,10 +19,13 @@ VPC_ID=$(aws ec2 create-vpc \
   --tag-specifications 'ResourceType=vpc,Tags=[{Key=Name,Value=taller-punto2-cli-vpc}]' \
   --query 'Vpc.VpcId' \
   --output text)
+```
 
-  ## Obtener zonas de disponibilidad
 
-  AZ1=$(aws ec2 describe-availability-zones \
+## Obtener zonas de disponibilidad
+
+```bash
+AZ1=$(aws ec2 describe-availability-zones \
   --region us-east-2 \
   --profile user_cli \
   --query 'AvailabilityZones[0].ZoneName' \
@@ -28,9 +36,12 @@ AZ2=$(aws ec2 describe-availability-zones \
   --profile user_cli \
   --query 'AvailabilityZones[1].ZoneName' \
   --output text)
+```
+
 
 ## Crear subredes
 
+```bash
 SUBNET1_ID=$(aws ec2 create-subnet \
   --vpc-id $VPC_ID \
   --cidr-block 10.2.1.0/24 \
@@ -50,10 +61,13 @@ SUBNET2_ID=$(aws ec2 create-subnet \
   --tag-specifications 'ResourceType=subnet,Tags=[{Key=Name,Value=taller-cli-subnet-2}]' \
   --query 'Subnet.SubnetId' \
   --output text)
+```
 
-  ## Crear Security Group
 
-  SG_ID=$(aws ec2 create-security-group \
+## Crear Security Group
+
+```bash
+SG_ID=$(aws ec2 create-security-group \
   --group-name taller-cli-sg \
   --description "Security Group Punto 2 CLI" \
   --vpc-id $VPC_ID \
@@ -67,9 +81,12 @@ aws ec2 create-tags \
   --tags Key=Name,Value=taller-cli-sg \
   --region us-east-2 \
   --profile user_cli
+```
+
 
 ## Crear bucket S3
 
+```bash
 ACCOUNT_ID=$(aws sts get-caller-identity \
   --profile user_cli \
   --query Account \
@@ -82,9 +99,12 @@ aws s3api create-bucket \
   --region us-east-2 \
   --create-bucket-configuration LocationConstraint=us-east-2 \
   --profile user_cli
+```
+
 
 ## Crear EC2
 
+```bash
 AMI_ID=$(aws ec2 describe-images \
   --owners amazon \
   --region us-east-2 \
@@ -110,9 +130,12 @@ aws ec2 wait instance-running \
   --instance-ids $INSTANCE_ID \
   --region us-east-2 \
   --profile user_cli
+```
+
 
 ## Crear DB Subnet Group
 
+```bash
 DB_SUBNET_GROUP="taller-punto2-cli-db-subnet"
 
 aws rds create-db-subnet-group \
@@ -121,9 +144,12 @@ aws rds create-db-subnet-group \
   --subnet-ids $SUBNET1_ID $SUBNET2_ID \
   --region us-east-2 \
   --profile user_cli
+```
+
 
 ## Crear RDS con contraseña administrada por Secrets Manager
 
+```bash
 DB_IDENTIFIER="taller-punto2-cli-rds"
 
 aws rds create-db-instance \
@@ -146,10 +172,12 @@ aws rds wait db-instance-available \
   --db-instance-identifier $DB_IDENTIFIER \
   --region us-east-2 \
   --profile user_cli
+```
 
 
 ## Eliminación
 
+```bash
 aws rds delete-db-instance \
   --db-instance-identifier $DB_IDENTIFIER \
   --skip-final-snapshot \
@@ -200,3 +228,4 @@ aws ec2 delete-vpc \
 aws s3 rb s3://$BUCKET_NAME \
   --force \
   --profile user_cli
+```
