@@ -1,0 +1,11 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "LeerSoloSecretoDocumentDB",
+			"Effect": "Allow",
+			"Action": "secretsmanager:GetSecretValue",
+			"Resource": "arn:aws:secretsmanager:us-east-2:052022403573:secret:rds!cluster-9d7acc96-9050-4a72-9d68-834df82fbe06-VS2JTN"
+		}
+	]
+}
