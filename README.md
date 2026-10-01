@@ -425,4 +425,4 @@ Actividad del curso **Ingeniería de Datos** de la **Universidad EIA**, periodo 
 **Autores**
 
 - Juan José Jaramillo Mora — [@Juanjo1414](https://github.com/Juanjo1414)
-- Sebastián Giraldo Franco
+- Sebastián Giraldo Franco — [@sebasgiraldo69](https://github.com/sebasgiraldo69)
