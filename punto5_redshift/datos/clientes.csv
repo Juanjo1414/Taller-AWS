@@ -1,0 +1,13 @@
+id_cliente,nombre,ciudad,segmento,fecha_registro
+1,Laura Gómez,Medellín,Persona,2025-03-14
+2,Andrés Restrepo,Medellín,Persona,2025-05-02
+3,Distribuidora Andina S.A.S.,Medellín,Empresa,2024-11-20
+4,Camila Rodríguez,Bogotá,Persona,2025-01-09
+5,Tecnosoluciones Ltda.,Bogotá,Empresa,2024-08-30
+6,Santiago Martínez,Bogotá,Persona,2025-07-18
+7,Valentina Herrera,Cali,Persona,2025-02-25
+8,Comercializadora del Pacífico,Cali,Empresa,2024-10-05
+9,Mateo Castaño,Pereira,Persona,2025-06-11
+10,Café y Montaña S.A.S.,Manizales,Empresa,2025-04-22
+11,Daniela Ospina,Barranquilla,Persona,2025-09-03
+12,Logística Caribe S.A.S.,Barranquilla,Empresa,2024-12-15

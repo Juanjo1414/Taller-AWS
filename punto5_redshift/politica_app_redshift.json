@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SubirArchivosPunto5",
+      "Effect": "Allow",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::$BUCKET/punto5/*"
+    },
+    {
+      "Sid": "EjecutarSQLEnElWorkgroup",
+      "Effect": "Allow",
+      "Action": ["redshift-data:ExecuteStatement", "redshift-data:BatchExecuteStatement"],
+      "Resource": "$WG_ARN"
+    },
+    {
+      "Sid": "ConsultarEstadoYResultados",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-data:DescribeStatement",
+        "redshift-data:GetStatementResult",
+        "redshift-data:CancelStatement",
+        "redshift-data:ListStatements"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LeerSecretoDelNamespace",
+      "Effect": "Allow",
+      "Action": "secretsmanager:GetSecretValue",
+      "Resource": "$SECRET_ARN"
+    }
+  ]
+}
