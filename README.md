@@ -60,43 +60,37 @@ Todos los recursos se desplegaron en una sola región, **us-east-2 (Ohio)**, y s
 │
 ├── punto1_secrets_manager/
 │   ├── leer_secreto.py                 # Lectura del secreto con Boto3
-│   ├── politica_lector_secreto.json    # Política IAM de solo lectura sobre un secreto
-│   └── evidencias/
+│   └── politica_lector_secreto.json    # Política IAM de solo lectura sobre un secreto
 │
 ├── punto2_terraform_sdk_cli/
 │   ├── terraform/                      # main.tf, variables.tf, outputs.tf
 │   ├── boto3/                          # Despliegue y eliminación con el SDK
 │   ├── cli/                            # Comandos de AWS CLI
-│   ├── politica_user_cli.json          # Permisos mínimos del usuario user_cli
-│   └── evidencias/
+│   └── politica_user_cli.json          # Permisos mínimos del usuario user_cli
 │
 ├── punto3_documentdb/
 │   ├── documentdb_tienda.py            # Inserción, filtro, ordenación y agregación
 │   ├── politica_app_docdb.json         # Lectura del secreto administrado del clúster
 │   ├── global-bundle.pem               # Certificado público de AWS para TLS
-│   ├── diagrama_conexion_documentdb.png
-│   └── evidencias/
+│   └── diagrama_conexion_documentdb.png
 │
 ├── punto4_neptune/
 │   ├── neptune_rutas.py                # Creación del grafo y consultas de recorrido
 │   ├── politica_app_neptune.json       # Acceso a datos del clúster vía IAM
 │   ├── modelo_grafo_neptune.png
-│   ├── arquitectura_acceso_neptune.png
-│   └── evidencias/
+│   └── arquitectura_acceso_neptune.png
 │
 ├── punto5_redshift/
 │   ├── datos/                          # Tablas relacionadas en CSV
 │   ├── redshift_carga_consultas.py     # S3 → COPY → consultas con la Data API
-│   ├── consultas.sql
-│   └── evidencias/
+│   └── consultas.sql
 │
 └── punto6_glue/
     ├── datos/                          # Archivo con 20+ registros cargado a S3
-    ├── consultas_athena.sql
-    └── evidencias/
+    └── consultas_athena.sql
 ```
 
-> Las carpetas `evidencias/` contienen capturas de creación, prueba y eliminación de recursos. Antes de subirlas se ocultaron el número de cuenta, las direcciones IP y cualquier valor sensible.
+> Las evidencias de creación, prueba y eliminación de recursos (capturas de pantalla) se presentan en el informe de la actividad y no se versionan en este repositorio. En ellas se ocultaron el número de cuenta, las direcciones IP y cualquier valor sensible.
 
 ---
 
@@ -395,7 +389,7 @@ Estimaciones para el tiempo real de uso de cada práctica en us-east-2. Los cál
 
 ## Limpieza de recursos
 
-Al finalizar cada punto se eliminaron todos los recursos y se verificó que no quedaran componentes facturables.
+Al finalizar cada punto se eliminaron todos los recursos y se verificó que no quedaran componentes facturables. Las capturas de esta verificación se incluyen en el informe.
 
 | Recurso | Comando de verificación |
 |---|---|
@@ -431,4 +425,4 @@ Actividad del curso **Ingeniería de Datos** de la **Universidad EIA**, periodo 
 **Autores**
 
 - Juan José Jaramillo Mora — [@Juanjo1414](https://github.com/Juanjo1414)
-- Sebastián Giraldo Franco — [@sebasgiraldo69](https://github.com/sebasgiraldo69)
+- Sebastián Giraldo Franco
